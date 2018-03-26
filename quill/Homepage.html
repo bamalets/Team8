@@ -96,23 +96,23 @@ body, html {
   <h3 class="w3-center">ABOUT QUILL</h3>
 <!--Signup page -->
   <p>This project is meant to have students to access notes from classmates from different classes they are signed up for. This way they have more materials to use to study for the class. </p>
-  <form action="quilldb.php" style="border:1px solid #ccc">
+  <form action="quilldb.php" method = "post" id = "quilldb" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
 
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="username" required>
+    <label for="Username"><b>Username</b></label>
+    <input type="text" placeholder="Username" name="Username" required>
 
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Password" name="psw" required>
+    <label for="Password"><b>Password</b></label>
+    <input type="password" placeholder="Password" name="Password" required>
 
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" name="Password-repeat" required>
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
