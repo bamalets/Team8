@@ -4,11 +4,11 @@ try{
 	session_start();
 	$ID = $_POST["Username"];
 	$pass = $_POST["Password"];
-	$dbh = new PDO ('mysql:host=classdb.it.mtu.edu;dbname=quilldb', "quilldb_rw", "Volatile");
+	$dbh = new PDO ('mysql:host=classdb.it.mtu.edu;dbname=quilldb', "quilldb_rw", "Voltaire");
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-foreach ( $dbh->query("call properLogin(\"".$ID."\",ENCODE(\"".$pass."\",'123'))") as $row) {
+foreach ( $dbh->query("call addUser(\"".$ID."\",ENCODE(\"".$pass."\",'123'))") as $row) {
 
     if($row[0] == 1 ){
         $_SESSION["name"] = $_POST["Username"];
@@ -19,7 +19,7 @@ foreach ( $dbh->query("call properLogin(\"".$ID."\",ENCODE(\"".$pass."\",'123'))
         exit();
     }
   // This function gets the users name
-  $dbh = new PDO('mysql:host=classdb.it.mtu.edu;dbname=quilldb', "quilldb_rw", "Volatile");
+  $dbh = new PDO('mysql:host=classdb.it.mtu.edu;dbname=quilldb', "quilldb_rw", "%");
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   foreach ( $dbh->query("call getSName(\"".$ID."\")") as $row) {
       $_SESSION["Sname"] = $row[0];
