@@ -58,4 +58,4 @@ create procedure addUser(uN varchar(16), uP varchar(32))
 #select * from users;
 #select qLogin("JoeSmith", "Pass");
 				
-	
+grant all privileges on function quilldb.addClass to 'quilldb_rw'@'%';
