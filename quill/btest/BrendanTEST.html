@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title id = tID></title>
+</head>
+
+<body>
+	<h1 id = h1ID></h1>
+	<p>CONTENT</p>
+	<div id = "test"></div>
+</body>
+
+<script>
+//This script handles the name of the folder that it is in.
+var fName = window.location.pathname;
+fName = fName.substring(1, fName.lastIndexOf("/"));
+
+fName = fName.substring(fName.indexOf("/", 0) + 1, fName.length);
+fName = fName.substring(fName.indexOf("/", 0) + 1, fName.length);
+
+document.getElementById("tID").innerHTML = fName;
+document.getElementById("h1ID").innerHTML = fName;
+</script>
+
+<script>
+const testF = './btest/';
+var fs = require('fs');
+fs.readdir(testF, (err, files) => {
+	files.forEach(file => {
+		console.log(file);
+	});
+})
+
+</script>
+<!--
+<script src = 'directory.php'>
+
+	var oboy = [1, 2, 3, 5];
+
+	function makeListDynamically(array){
+		var list = document.createElement('ul');
+		
+		for(var i = 0; i < array.length; i++){
+			var item = document.createElement('li');
+			
+			item.appendChild(document.createTextNode(array[i]));
+			
+			list.appendChild(item);
+		
+		}
+		
+		return list;
+	}
+	
+	document.getElementById("test").appendChild(makeListDynamically(oboy));
+</script>
+-->
+
+
+
+</html>
